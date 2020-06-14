@@ -73,6 +73,10 @@ ruleTester.run('jsx-no-random-key', rule, {
   ],
   invalid: [].concat(
     {
+      code: '<App key={nanoid()} />',
+      errors: [{message: ERROR_MESSAGE}]
+    },
+    {
       code: '[<App key={nanoid()} />];',
       errors: [{message: ERROR_MESSAGE}]
     },
